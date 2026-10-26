@@ -1,6 +1,6 @@
 # merge-backend.ps1
 # Merges the 'backend' branch repo into main/backend, then commits to the main git repo.
-# Uses robocopy: copies new & updated files, does NOT delete extras in destination.
+# Uses robocopy /MIR: copies new & updated files and deletes files removed/renamed in the source.
 
 $Root     = Split-Path -Parent $PSScriptRoot
 $Source   = Join-Path $Root "backend"
@@ -38,7 +38,7 @@ if ($SourceHash) {
 }
 Write-Host ""
 
-robocopy $Source $Dest /E /XD ".git" /NP /TEE /LOG+:"$PSScriptRoot\merge-backend.log"
+robocopy $Source $Dest /MIR /XD ".git" ".understand-anything" ".idea" ".settings" "target" /XF "*.classpath" "*.factorypath" "*.project" /NP /TEE /LOG+:"$PSScriptRoot\merge-backend.log"
 
 $rc = $LASTEXITCODE
 if ($rc -ge 8) {
