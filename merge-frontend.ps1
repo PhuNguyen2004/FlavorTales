@@ -1,6 +1,6 @@
 # merge-frontend.ps1
 # Merges the 'frontend' branch repo into main/frontend, then commits to the main git repo.
-# Uses robocopy: copies new & updated files, does NOT delete extras in destination.
+# Uses robocopy /MIR: copies new & updated files and deletes files removed/renamed in the source.
 # Excludes node_modules and .next to avoid copying build/dependency artifacts.
 
 $Root     = Split-Path -Parent $PSScriptRoot
@@ -39,7 +39,7 @@ if ($SourceHash) {
 }
 Write-Host ""
 
-robocopy $Source $Dest /E /XD ".git" "node_modules" ".next" /NP /TEE /LOG+:"$PSScriptRoot\merge-frontend.log"
+robocopy $Source $Dest /MIR /XD ".git" "node_modules" ".next" /NP /TEE /LOG+:"$PSScriptRoot\merge-frontend.log"
 
 $rc = $LASTEXITCODE
 if ($rc -ge 8) {
