@@ -29,6 +29,8 @@ export interface AdminShopDetail extends AdminShopListItem {
   latitude: number | null;
   longitude: number | null;
   radius: number | null;
+  viAudioUrl: string | null;
+  enAudioUrl: string | null;
 }
 
 // ── API helpers ───────────────────────────────────────────────────────────────
