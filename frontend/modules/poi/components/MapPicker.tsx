@@ -118,10 +118,10 @@ export default memo(function MapPicker({ lat, lng, radius, onChange }: MapPicker
           style={{ height: "100%", width: "100%" }}
           preferCanvas
         >
-          {/* OpenStreetMap tiles */}
+          {/* Esri World Street Map tiles */}
           <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution="Tiles &copy; Esri &mdash; Source: Esri, HERE, Garmin, OpenStreetMap contributors"
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}"
             keepBuffer={4}
             updateWhenZooming={false}
           />
