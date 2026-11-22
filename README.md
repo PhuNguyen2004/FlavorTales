@@ -201,30 +201,6 @@ Every backend endpoint returns a unified response envelope:
 
 ---
 
-## Branching Strategy
-
-This repository uses four dedicated branches that each merge directly into `main`:
-
-```
-backend        ──┐
-frontend       ──┤
-                 ├──> main
-database       ──┤
-infrastructure ──┘
-```
-
-| Branch | Purpose |
-|--------|---------|
-| `main` | Stable production branch |
-| `backend` | Spring Boot source code |
-| `frontend` | Next.js source code |
-| `database` | MySQL schema, migrations, seed data |
-| `infrastructure` | Docker Compose and deployment configuration |
-
-**Rule:** Changes in each branch are developed and validated independently, then merged directly into `main` when ready.
-
----
-
 ## Contributing
 
 1. Create your feature branch from the appropriate source branch (`backend`, `frontend`, `database`, or `infrastructure`).
