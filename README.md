@@ -85,6 +85,25 @@ Shared utilities under `frontend/shared/`:
 
 ---
 
+## Deployment
+
+FlavorTales runs in production on a self-hosted **Mini PC**, hosting the frontend, backend, and all databases via Docker Compose.
+
+**Hardware specs (GMKtec G3 Plus):**
+
+| Component | Spec |
+|-----------|------|
+| **CPU** | Intel® 12th Gen Twin Lake N150, 4 cores / 4 threads, up to 3.6 GHz |
+| **RAM** | 32 GB DDR4 |
+| **Storage** | 1 TB SATA M.2 2242 SSD |
+| **OS** | Ubuntu Server |
+
+**Purpose:** The Mini PC hosts the entire production stack — Next.js frontend, Spring Boot backend, and the MySQL/Redis/MongoDB databases — all orchestrated through `infrastructure/docker-compose.yml`.
+
+**Connection:** The server is accessed and managed remotely via **SSH**.
+
+---
+
 ## Repository Structure
 
 ```
