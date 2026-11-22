@@ -141,6 +141,49 @@ The app will be available at `http://localhost:3000`.
 
 ---
 
+## Page Endpoints
+
+Depending on your role, access the platform through the following URLs (default port `3000`):
+
+### 🧭 Tourist (khách hàng)
+
+| URL | Description |
+|-----|-------------|
+| `/map` | Interactive map — discover nearby POIs, geofence-based proximity detection, audio guides |
+
+### 🏪 Vendor (chủ quán)
+
+| URL | Description |
+|-----|-------------|
+| `/auth/vendor/signup` | Vendor registration |
+| `/auth/vendor/login` | Vendor login |
+| `/auth/vendor/verify` | Email verification |
+| `/auth/vendor/forgot-password` | Request a password reset |
+| `/auth/vendor/reset-password` | Reset password |
+| `/vendor/dashboard` | Vendor dashboard overview |
+| `/vendor/shop` | Shop management |
+| `/vendor/shop/create` | Create a new shop |
+| `/vendor/poi` | POI (Point of Interest) management |
+| `/vendor/poi/create` | Create a new POI |
+| `/vendor/poi/[poiId]/edit` | Edit an existing POI |
+| `/vendor/orders` | Order management |
+| `/vendor/reviews` | Customer reviews |
+| `/vendor/analytics` | Traffic and engagement analytics |
+| `/vendor/settings` | Account settings |
+
+### 🛡️ Admin
+
+| URL | Description |
+|-----|-------------|
+| `/auth/admin/login` | Admin login |
+| `/admin/dashboard` | Admin dashboard overview |
+| `/admin/pending-reviews` | Review pending vendor/POI/shop submissions |
+| `/admin/pending-reviews/[id]` | Review a specific submission |
+| `/admin/food-stalls` | Manage approved food stalls |
+| `/admin/qr-code` | QR code management |
+
+---
+
 ## API Contract
 
 Every backend endpoint returns a unified response envelope:
